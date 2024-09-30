@@ -1,0 +1,238 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #aea8a8;
+    color: #050505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header (Top) */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: #e5e2e2;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-top .logo {
+    font-size: 24px;
+    color: #070707;
+    font-weight: bold;
+}
+
+.header-top .search-bar {
+    display: flex;
+}
+
+.header-top .search-bar input {
+    background-color: #f9f4f4;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #070707;
+    outline: none;
+}
+
+.header-top .search-bar button {
+    background-color: #070707;
+    border: none;
+    color: #f9f4f4;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header-top .Admin a, .header-top .cart a {
+    color: #070707;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Header (Bottom) */
+.header-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-bottom a {
+    color: #f8e6c5fb;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.header-bottom .menu-button {
+    background-color: #f3c56efb;
+    border: none;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.header-bottom .user-info{
+   
+    border: none;
+    color: #f8e6c5fb;
+}
+
+/* Menu Overlay */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide the menu off-screen initially */
+    width: 250px; /* Fixed width for the menu */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth slide effect */
+    z-index: 999;
+    color: white;
+}
+
+.menu.show {
+    left: 0; /* When toggled, bring the menu into view */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: #f8e6c5fb;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #fff;
+}
+
+/* Close button for the menu */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.logout-btn:hover {
+    background-color: #ff1a1a;
+}
+
+/* Products Section */
+.products-section {
+    width: 80%;
+    margin: 40px 0;
+    text-shadow: #050505;
+}
+
+.products-section h2 {
+    font-size: 36px;
+    text-align: center;
+    color: #f7f7f7;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: #050505;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.products-container div {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Fixing the height to make all products appear the same size */
+    height: 350px;
+}
+
+.products-container div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.products-container img {
+    /* Ensure all product images have the same size */
+    width: 100%;
+    height: 200px; /* You can adjust this to your desired height */
+    object-fit: cover; /* Crop and cover the image while maintaining aspect ratio */
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #f2a008fb;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
